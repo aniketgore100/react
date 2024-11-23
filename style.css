@@ -1,0 +1,14 @@
+#container{
+    background-color: aquamarine;
+    border: solid black 2px;
+}
+
+#title{
+    background-color: aquamarine;
+    border: solid black 3px;   
+}
+
+#subtitle{
+    background-color: aquamarine;
+    border: solid black 4px;
+}
