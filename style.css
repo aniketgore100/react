@@ -1,14 +1,32 @@
-#container{
-    background-color: aquamarine;
-    border: solid black 2px;
+.logo{
+    width: 100px;
+}
+.Header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border: 1px solid black;
 }
 
-#title{
-    background-color: aquamarine;
-    border: solid black 3px;   
+.nav-items > ul{
+    list-style-type: none;
+    display: flex;
 }
 
-#subtitle{
-    background-color: aquamarine;
-    border: solid black 4px;
+.nav-items > ul > li{
+    padding: 10px;
+}
+
+.card{
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+.card > img{
+    width: 100%;
+}
+.restoCard{
+    display: flex;
+    flex-wrap: wrap;
 }
