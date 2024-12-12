@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import RestCard from "./RestCard";
 import Shimmer from "./Shimmer";
+<<<<<<< HEAD
+=======
+import { Link } from "react-router-dom";
+>>>>>>> master
 
 function filterData(searchTxt, List) {
   const filterdata = List.filter( (item)=>item.name.toLowerCase().includes(searchTxt.toLowerCase()));
@@ -57,7 +61,12 @@ const Body = () => {
 
       <div className="restoCard">
         {filterRestaurant.map((rest) => {
-          return <RestCard {...rest}  />;
+          console.log(rest.id);
+          
+          return  <Link to = {"/restaurant/" + rest.id}> 
+              <RestCard {...rest} />;
+          </Link>
+          
         })}
       </div>
     </>
