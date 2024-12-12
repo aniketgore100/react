@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import RestCard from "./RestCard";
 import Shimmer from "./Shimmer";
-<<<<<<< HEAD
-=======
 import { Link } from "react-router-dom";
->>>>>>> master
 
 function filterData(searchTxt, List) {
   const filterdata = List.filter( (item)=>item.name.toLowerCase().includes(searchTxt.toLowerCase()));
