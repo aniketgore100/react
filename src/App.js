@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy } from "react";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -7,6 +7,9 @@ import Contact from "./components/Contact";
 import About from "./components/About";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Error from "./components/Error"; // Add Error component if not defined
+
+const Insatmart = lazy(() =>import("./components/Instamart")); 
+
 
 const AppLayOut = () => {
   return (
@@ -28,6 +31,7 @@ const appRouter = createBrowserRouter([
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
       { path: "/restaurant/:restId", element: <RestaurantMenu /> },
+      { path: "/instamart", element:<Insatmart/>}
     ],
   },
 ]);

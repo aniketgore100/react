@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Status from "../Utils/Status";
 const Title = () => (
   <a href="/">
     <img
@@ -10,8 +11,13 @@ const Title = () => (
   </a>
 );
 
+
 const Header = () => {
+  
   const [islogged, setLoggedIn] = useState(false);
+  const isOnline = Status();
+
+
   return (
     <div className="Header">
       <Title />
@@ -20,14 +26,17 @@ const Header = () => {
           <Link to="/"><li>Home</li></Link>
           <Link to="/about"><li>About</li></Link>
           <Link to="/contact"><li>Contact</li></Link>
-          <li>Cart</li>
+          <Link to="/instamart"><li>Instamart</li></Link>
         </ul>
       </div>
+      <div className="status">
+      <h4>{isOnline? '✅' : '🔴'}</h4>
       {islogged ? (
         <button onClick={() => setLoggedIn(false)}>logout</button>
       ) : (
         <button onClick={() => setLoggedIn(true)}>login</button>
       )}
+      </div>
     </div>
   );
 };

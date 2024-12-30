@@ -1,29 +1,40 @@
-.logo{
+/* General Styles */
+.logo {
   width: 100px;
 }
-.Header{
+
+.Header {
   display: flex;
   justify-content: space-between;
   margin: 10px;
   border: 1px solid black;
 }
 
-.nav-items > ul{
-  list-style-type: none;
+.nav-items {
   display: flex;
+  justify-content: flex-end; /* Aligns items to the right */
+  margin-left: auto; /* Adjust alignment dynamically */
 }
 
-.nav-items > ul > li{
+.nav-items > ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px; /* Adjust the value as needed */
+}
+
+.nav-items > ul > li {
   padding: 10px;
 }
 
-.card{
+/* Card Styles */
+.card {
   width: 200px;
   border: 1px solid black;
   padding: 10px;
   margin: 10px;
   height: auto;
 }
+
 .card h3 {
   white-space: nowrap;
   overflow: hidden;
@@ -31,16 +42,19 @@
   line-height: 1.2;
   overflow-wrap: break-word;
 }
-.card > img{
+
+.card > img {
   width: 100%;
   border-radius: 20px;
 }
-.restoCard{
+
+.restoCard {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* Center cards in smaller screens */
 }
 
-
+/* Shimmer Styles */
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
@@ -52,10 +66,10 @@
   width: 200px;
   height: 300px;
   background: linear-gradient(
-    to right,
-    #e0e0e0 25%,
-    #f0f0f0 50%,
-    #e0e0e0 75%
+      to right,
+      #e0e0e0 25%,
+      #f0f0f0 50%,
+      #e0e0e0 75%
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
@@ -64,9 +78,60 @@
 
 @keyframes shimmer {
   0% {
-    background-position: -200% 0;
+      background-position: -200% 0;
   }
   100% {
-    background-position: 200% 0;
+      background-position: 200% 0;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .Header {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
+  }
+
+  .logo {
+      margin-bottom: 10px;
+  }
+
+  .nav-items {
+      justify-content: center;
+      margin-left: 0;
+  }
+
+  .nav-items > ul {
+      flex-direction: column; /* Stack navigation items vertically */
+      align-items: center;
+      gap: 10px;
+  }
+
+  .card {
+      width: 100%; /* Full width on smaller screens */
+      margin: 10px 0;
+  }
+
+  .shimmer-container {
+      justify-content: center; /* Center shimmer cards */
+  }
+
+  .shimmer-card {
+      width: 100%; /* Full width for shimmer cards */
+      max-width: 300px; /* Limit width */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-items > ul > li {
+      padding: 5px; /* Reduce padding on smaller screens */
+  }
+
+  .card {
+      padding: 5px;
+  }
+
+  .shimmer-card {
+      height: 250px; /* Adjust height for smaller screens */
   }
 }

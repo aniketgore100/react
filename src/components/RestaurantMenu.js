@@ -1,23 +1,13 @@
-import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useRetaurant from "../Utils/useRestaurant";
+import {imageUrl} from "../Utils/Constants"
+
 import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
-  const imageUrl = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/`;
-  const { restId } = useParams();  // Correct usage of the hook inside the component
-  const [restaurantMenu, setRestaurantMenu] = useState(null);
+  const { restId } = useParams(); 
+  const restaurantMenu = useRetaurant(restId);
   
-  useEffect(() =>{
-    getRestaunrants();
-  }, []);
-
-  async function getRestaunrants(){
-    const RestaurantList = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.8687882&lng=75.351215&restaurantId=" + restId);
-    const ResData = await RestaurantList.json();
-    setRestaurantMenu(ResData.data.cards[2].card.card.info);
-  }
-
- 
   return (!restaurantMenu) ? <Shimmer/> : (
     <div>
       <div className="Card">
