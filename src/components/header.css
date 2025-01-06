@@ -1,0 +1,48 @@
+.status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .status h4 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .status button {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .status button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .status button:active {
+    transform: scale(0.95);
+  }
+  
+  .status button.logout {
+    background-color: #DC3545;
+  }
+  
+  .status button.logout:hover {
+    background-color: #b02a37;
+  }
+  

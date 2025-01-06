@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Status from "../Utils/Status";
+import "./header.css"
 const Title = () => (
   <a href="/">
     <img

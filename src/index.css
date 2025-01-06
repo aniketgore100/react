@@ -1,60 +1,95 @@
-/* General Styles */
 .logo {
   width: 100px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
 }
 
 .Header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 10px;
-  border: 1px solid black;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-items {
   display: flex;
-  justify-content: flex-end; /* Aligns items to the right */
-  margin-left: auto; /* Adjust alignment dynamically */
+  justify-content: flex-end;
+  margin-left: auto;
 }
 
 .nav-items > ul {
   list-style-type: none;
   display: flex;
-  gap: 20px; /* Adjust the value as needed */
+  gap: 20px;
 }
 
 .nav-items > ul > li {
   padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Card Styles */
+.nav-items > ul > li:hover {
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+}
+
 .card {
   width: 200px;
-  border: 1px solid black;
-  padding: 10px;
+  height: 300px; /* Fixed height for uniformity */
+  border: 1px solid #ddd;
+  padding: 15px;
   margin: 10px;
-  height: auto;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden; /* Prevents content overflow */
 }
 
 .card h3 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1.2;
-  overflow-wrap: break-word;
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
 }
 
 .card > img {
   width: 100%;
-  border-radius: 20px;
+  height: 150px; /* Uniform image size */
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 .restoCard {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center cards in smaller screens */
+  justify-content: center;
+  gap: 20px;
 }
 
-/* Shimmer Styles */
+.restoCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
@@ -66,72 +101,77 @@
   width: 200px;
   height: 300px;
   background: linear-gradient(
-      to right,
-      #e0e0e0 25%,
-      #f0f0f0 50%,
-      #e0e0e0 75%
+    to right,
+    #e0e0e0 25%,
+    #f0f0f0 50%,
+    #e0e0e0 75%
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes shimmer {
   0% {
-      background-position: -200% 0;
+    background-position: -200% 0;
   }
   100% {
-      background-position: 200% 0;
+    background-position: 200% 0;
   }
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .Header {
-      flex-direction: column; /* Stack items vertically */
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
   }
 
   .logo {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   .nav-items {
-      justify-content: center;
-      margin-left: 0;
+    justify-content: center;
+    margin-left: 0;
   }
 
   .nav-items > ul {
-      flex-direction: column; /* Stack navigation items vertically */
-      align-items: center;
-      gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
   }
 
   .card {
-      width: 100%; /* Full width on smaller screens */
-      margin: 10px 0;
+    width: 90%;
+    margin: 15px 0;
   }
 
+  
   .shimmer-container {
-      justify-content: center; /* Center shimmer cards */
+    justify-content: center;
   }
 
   .shimmer-card {
-      width: 100%; /* Full width for shimmer cards */
-      max-width: 300px; /* Limit width */
+    width: 90%;
+    max-width: 300px;
   }
 }
 
 @media (max-width: 480px) {
   .nav-items > ul > li {
-      padding: 5px; /* Reduce padding on smaller screens */
+    padding: 8px;
+    font-size: 14px;
   }
 
   .card {
-      padding: 5px;
+    padding: 10px;
+    font-size: 14px;
   }
 
   .shimmer-card {
-      height: 250px; /* Adjust height for smaller screens */
+    height: 250px;
   }
 }
